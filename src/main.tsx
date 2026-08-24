@@ -13,7 +13,7 @@ const key=import.meta.env.VITE_SUPABASE_ANON_KEY as string|undefined;
 const supabase=!!(url&&key);
 const headers={'apikey':key||'','Authorization':`Bearer ${key||''}`,'Content-Type':'application/json','Prefer':'return=representation'};
 async function db(path:string,init:RequestInit={}){if(!url)return null;const r=await fetch(`${url}/rest/v1/${path}`,{...init,headers:{...headers,...(init.headers||{})}});if(!r.ok)throw new Error(await r.text());const t=await r.text();return t?JSON.parse(t):null}
-const columns=['COD VAGA','Abertura da vaga','DIVISÃO','SETOR','Cidade','Cargo','Nível da vaga','GESTOR','SLA','DATA FECHAMENTO','GUPY ANDAMENTO','Status','CANDIDATO SELECIONADO','DATA ADMISSÃO','PRIORIDADE','VAGA COM TALENT','BP RESPONSÁVEL','SUBSTITUTO','NEGÓCIO','STATUS GERAL'];
+const columns=['COD VAGA','Abertura da vaga','DIVISÃO','SETOR','Cidade','Cargo','Nível da vaga','GESTOR','SLA','DATA FECHAMENTO','GUPY ANDAMENTO','Status','CANDIDATO SELECIONADO','DATA ADMISSÃO','PRIORIDADE','VAGA COM TALENT','BP RESPONSÁVEL','SUBSTITUTO','NEGÓCIO','STATUS GERAL','OBSERVAÇÃO'];
 const statuses=['Acima da Faixa','Carta Oferta','Declinou','Encerrado','Entrevista Gestor','Entrevista Gestor do Gestor','Pesquisa pregressa','Reprovado Gestor','Reprovado Gestor do Gestor','Reprovado RH'];
 const vacancyStatuses=['1 - Triagem','2 - Entrevista RH','3 - Entrevista Gestor','4 - Primus/DISC','5 - Testes/Avaliações','6 - Envio de Carta Proposta','7 - Exame/Documentação','8 - Concluído','9 - Stand By','10 - Cancelado'];
 const team=[
