@@ -1,4 +1,4 @@
-import React, {useEffect, useMemo, useState} from 'react';
+// Supabase compartilhado habilitado na Vercel\nimport React, {useEffect, useMemo, useState} from 'react';
 import {createRoot} from 'react-dom/client';
 import seedVagas from './data/vagas.json';
 import './styles.css';
